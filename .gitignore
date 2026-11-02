@@ -1,0 +1,21 @@
+# --------------------------------------------------
+# Credenciales y configuración local
+# --------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.example.*
+
+# --------------------------------------------------
+# Logs
+# --------------------------------------------------
+*.log
+logs/
+error_log
+
+# --------------------------------------------------
+# Contenido subido por los administradores
+# --------------------------------------------------
+public/assets/img/noticias/*
+!public/assets/img/noticias/.gitkeep
+!public/assets/img/noticias/demo-*
