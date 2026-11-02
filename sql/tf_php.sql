@@ -42,7 +42,7 @@ CREATE TABLE citas (
 CREATE TABLE noticias (
     id_noticia INT AUTO_INCREMENT NOT NULL,
     titulo VARCHAR(255) NOT NULL UNIQUE,
-    imagen VARCHAR(255) NOT NULL
+    imagen VARCHAR(255) NOT NULL,
     texto LONGTEXT NOT NULL,
     fecha DATETIME NOT NULL,
     id_user INT NOT NULL,

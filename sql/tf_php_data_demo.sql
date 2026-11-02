@@ -46,21 +46,21 @@ La celebración comenzará durante la medianoche del 19 al 20 de enero con la iz
 
 Durante 24 horas, donostiarras de todas las edades participarán en los desfiles vestidos de cocineros, soldados y otros personajes tradicionales. La fiesta concluirá a medianoche con la arriada de la bandera.
 
-La Tamborrada volverá a demostrar por qué es una de las señas de identidad más importantes de Donostia.', '2026-01-15 10:00:00', 1);
+La Tamborrada volverá a demostrar por qué es una de las señas de identidad más importantes de Donostia.', '2026-01-15 10:00:00', 1),
     ('Demo noticia 2: Los Carnavales llenarán Donostia de música, disfraces y color', 'demo_carnavales_6ae8bb4d80dcc.jpeg', 'Donostia comienza a prepararse para recibir una de las celebraciones más divertidas del año: los Carnavales. Durante varios días, las calles de la ciudad se transformarán en un gran escenario donde los disfraces, la música y el humor serán los protagonistas.
 
 Uno de los momentos más esperados será el tradicional desfile de comparsas, en el que diferentes grupos recorrerán las principales calles de la ciudad con originales coreografías, vestimentas y espectaculares carrozas.
 
 La fiesta contará también con actividades infantiles, concursos de disfraces y diferentes propuestas musicales para todos los públicos. La Parte Vieja y las principales zonas comerciales serán algunos de los puntos con mayor ambiente festivo.
 
-Los Carnavales representan una oportunidad perfecta para disfrutar de Donostia de una manera diferente y compartir unos días de diversión con familiares y amigos.', '2026-02-10 11:00:00', 2);
+Los Carnavales representan una oportunidad perfecta para disfrutar de Donostia de una manera diferente y compartir unos días de diversión con familiares y amigos.', '2026-02-10 11:00:00', 2),
     ('Demo noticia 3: La Semana Grande convertirá Donostia en el centro de la fiesta durante nueve días', 'demo_semana_grande_6ae8bb9a3693e.jpeg', 'Donostia se prepara para celebrar una nueva edición de su Semana Grande, una de las citas festivas más importantes del verano. Durante nueve días, la ciudad ofrecerá una programación repleta de conciertos, espectáculos, actividades deportivas y propuestas culturales para todos los públicos.
 
 Uno de los grandes atractivos de estas fiestas será el tradicional Concurso Internacional de Fuegos Artificiales. Cada noche, miles de personas se reunirán alrededor de la bahía de La Concha para contemplar los espectáculos pirotécnicos que iluminarán el cielo donostiarra.
 
 El recinto ferial, los conciertos y las actividades organizadas en diferentes puntos de la ciudad completarán una programación pensada para disfrutar tanto de día como de noche.
 
-La Semana Grande volverá a reunir a residentes y visitantes en un ambiente festivo que convierte a Donostia en uno de los destinos más atractivos del verano.', '2026-08-05 12:00:00', 3);
+La Semana Grande volverá a reunir a residentes y visitantes en un ambiente festivo que convierte a Donostia en uno de los destinos más atractivos del verano.', '2026-08-05 12:00:00', 3),
     ('Demo noticia 4: Santo Tomás llenará las calles de Donostia de tradición y gastronomía', 'demo_santo_tomas_6ae8bbcc763bd.jpeg', 'El próximo 21 de diciembre, Donostia celebrará la tradicional feria de Santo Tomás, una de las jornadas más populares y esperadas del calendario festivo guipuzcoano.
 
 Durante todo el día, diferentes plazas y calles de la ciudad acogerán puestos de productos agrícolas, artesanía y gastronomía local. Los visitantes podrán encontrar quesos, verduras, miel, dulces y otros productos elaborados por productores de la zona.
