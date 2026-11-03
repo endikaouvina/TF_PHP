@@ -2,6 +2,9 @@
 
 /* COPIA ESTE ARCHIVO, RENÓMBRALO COMO .env.php Y CAMBIA LOS DATOS NECESARIOS */
 
+// Se desactiva la conversión automática de tipos de variables
+declare(strict_types=1);
+
 // Credenciales de acceso a la base de datos
 define('DB_HOST', 'tu_host');
 define('DB_NAME', 'tu_BBDD');

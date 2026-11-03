@@ -1,5 +1,8 @@
 <?php
 
+// Se desactiva la conversión automática de tipos de variables
+declare(strict_types=1);
+
 // Se tienen en cuenta todos los errores en cualquier entorno
 error_reporting(E_ALL);
 

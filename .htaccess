@@ -1,0 +1,5 @@
+# Activación del motor de reescritura de URLs
+RewriteEngine On
+
+# Redirigirá internamente hacia 'public/' toda petición que no empiece por 'public/'
+RewriteRule ^(?!public/)(.*)$ public/$1 [L]
