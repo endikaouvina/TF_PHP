@@ -1,0 +1,10 @@
+/* Se desactiva el espacio de la barra de scroll que Bootstrap reserva siempre */
+:root {
+    scrollbar-gutter: auto;
+}
+
+@media (width >= 1024px) {
+    .alert {
+        width: 50%;
+    }
+}

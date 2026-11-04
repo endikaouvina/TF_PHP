@@ -18,4 +18,6 @@ if (PROJECT_ENVIRONMENT === 'development') {
 
 // En cualquier entorno, se guardan los errores en 'logs/', un archivo por día
 ini_set('log_errors', '1');
-ini_set('error_log', LOG_PATH . 'php_' . LOG_FILENAME);
+if (is_dir(LOCAL_LOG_PATH) && is_writable(LOCAL_LOG_PATH)) {
+    ini_set('error_log', LOCAL_LOG_PATH . LOCAL_LOG_FILENAME . 'php.log');
+}

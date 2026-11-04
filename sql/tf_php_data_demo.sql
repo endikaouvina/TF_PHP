@@ -67,4 +67,4 @@ Durante todo el día, diferentes plazas y calles de la ciudad acogerán puestos 
 
 Como manda la tradición, uno de los grandes protagonistas será el talo con txistorra, que podrá degustarse en los numerosos puestos instalados para la ocasión. Tampoco faltarán la música, el ambiente festivo y las actividades para toda la familia.
 
-La feria constituye una oportunidad para acercarse a las costumbres rurales vascas y disfrutar de los productos de proximidad en pleno corazón de Donostia.', '2026-11-01 13:00:00', 4);
+La feria constituye una oportunidad para acercarse a las costumbres rurales vascas y disfrutar de los productos de proximidad en pleno corazón de Donostia.', '2026-11-01 13:00:00', 1);

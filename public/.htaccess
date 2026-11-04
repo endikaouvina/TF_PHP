@@ -1,0 +1,2 @@
+# Se evita que se muestre un listado de los directorios y archivos de una URL que no tenga index
+Options -Indexes

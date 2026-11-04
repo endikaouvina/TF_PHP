@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 // Se define la clase 'IndexController'
 class IndexController {
+
     // Se define el método 'showIndex()', que mostrará la página de inicio
     public function showIndex(): void {
 

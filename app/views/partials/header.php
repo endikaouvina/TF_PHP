@@ -12,8 +12,11 @@ declare(strict_types=1);
                 <a href="<?= BASE_PATH ?>" class="text-decoration-none fg-white">
                     <i class="fa-solid fa-house"></i> Inicio
                 </a>
+                <a href="<?= BASE_PATH ?>noticias.php" class="text-decoration-none fg-white">
+                    <i class="fa-solid fa-newspaper"></i> Noticias
+                </a>
             </nav>
         </div>
     </header>
     <!-- CONTENEDOR PRINCIPAL: AQUÍ SE INSERTARÁ EL CONTENIDO DE CADA VISITA -->
-    <main class="flex-grow-1">
+    <main class="flex-grow-1 py-9">

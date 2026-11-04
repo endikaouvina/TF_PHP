@@ -11,8 +11,16 @@ define('SITE_TITLE', 'AL DÍA CON LAS NOTICIAS');
 define('SITE_LANGUAGE', 'es');
 define('SITE_CODIFICATION', 'UTF-8');
 define('BASE_PATH', str_replace(realpath($_SERVER['DOCUMENT_ROOT']), '', dirname(__DIR__)) . '/');
-define('LOG_PATH', BASE_PATH . 'logs/');
-define('LOG_FILENAME', date('Y-m-d') . '.log');
+define('LOCAL_LOG_PATH', dirname(__DIR__) . '/logs/');
+define('LOCAL_LOG_FILENAME', date('Y-m-d') . '_');
+
+// Se crea la ruta 'LOCAL_LOG_PATH' si no existe
+if (!is_dir(LOCAL_LOG_PATH)) {
+    mkdir(LOCAL_LOG_PATH, 0775, true);
+}
+
+// Se incorpora la clase 'Logger', encargada de registrar los errores de la aplicación
+require_once dirname(__DIR__) . '/app/core/Logger.php';
 
 // Se definen los ajustes del entorno
 date_default_timezone_set('Europe/Madrid');

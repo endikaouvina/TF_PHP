@@ -22,4 +22,7 @@ declare(strict_types=1);
     <link rel="stylesheet" href="<?= BASE_PATH ?>assets/vendor/fontawesome_v7.3.1/css/regular.min.css">
     <link rel="stylesheet" href="<?= BASE_PATH ?>assets/vendor/fontawesome_v7.3.1/css/brands.min.css">
     <link rel="stylesheet" href="<?= BASE_PATH ?>assets/vendor/fontawesome_v7.3.1/css/solid.min.css">
+
+    <!-- HOJA DE ESTILOS PROPIA -->
+    <link rel="stylesheet" href="<?= BASE_PATH ?>assets/css/styles.css">
 </head>
