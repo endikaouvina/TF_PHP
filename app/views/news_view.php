@@ -7,6 +7,7 @@ declare(strict_types=1);
 require __DIR__ . '/partials/head.php';
 require __DIR__ . '/partials/header.php';
 
+// Se recogen las variables de otros archivos
 /** @var News[] $news */
 
 ?>

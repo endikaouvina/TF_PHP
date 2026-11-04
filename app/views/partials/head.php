@@ -3,13 +3,16 @@
 // Se desactiva la conversión automática de tipos de variables
 declare(strict_types=1);
 
+// Se recogen las variables de otros archivos
+/** @var string $pageTitle */
+
 ?>
 <!DOCTYPE html>
 <html lang="<?= SITE_LANGUAGE ?>" data-bs-theme="light">
 <head>
     <meta charset="<?= SITE_CODIFICATION ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= SITE_TITLE ?></title>
+    <title><?= (empty($pageTitle) ? '' : $pageTitle) . SITE_TITLE ?></title>
 
     <!-- HOJA DE ESTILOS DE NORMALIZE -->
     <link rel="stylesheet" href="<?= BASE_PATH ?>assets/vendor/normalize_v8.0.1/css/normalize.css">
