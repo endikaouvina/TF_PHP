@@ -17,8 +17,9 @@ class AuthController {
         $error = $_SESSION['error'] ?? null;
         unset($_SESSION['error']);
 
-        // Se entregan los datos a la vista, junto con el nombre de la página
+        // Se entregan los datos a la vista
         $pageTitle = 'Login | ';
+        $loginActive = 'active';
 
         require dirname(__DIR__) . '/views/login_view.php';
     }
@@ -89,6 +90,13 @@ class AuthController {
         // Se destruye la sesión por completo
         session_destroy();
 
+        // Se entregan los datos a la vista
+        $pageTitle = 'Cerrar sesión | ';
+        $logoutActive = 'active';
+
+        require dirname(__DIR__) . '/views/logout_view.php';
+
+        // Se redirige a la página de inicio
         header('Location: ' . BASE_PATH);
         exit();
 

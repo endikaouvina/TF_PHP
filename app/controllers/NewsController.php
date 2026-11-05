@@ -16,8 +16,9 @@ class NewsController {
         // Se obtienen todas las noticias
         $news = $newsDAO->list();
 
-        // Se entregan los datos a la vista, junto con el nombre de la página
+        // Se entregan los datos a la vista
         $pageTitle = 'Noticias | ';
+        $newsActive = 'active';
 
         require_once dirname(__DIR__) . '/views/news_view.php';
     }

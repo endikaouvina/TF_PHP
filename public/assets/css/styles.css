@@ -3,6 +3,11 @@
     scrollbar-gutter: auto;
 }
 
+/* Se sobrescriben estilos de Bootstrap */
+.nav .nav-link.fg-white:hover {
+    color: var(--bs-theme-fg, var(--bs-nav-link-active-color));
+}
+
 @media (width >= 1024px) {
     .alert {
         width: 50%;

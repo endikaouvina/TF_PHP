@@ -12,10 +12,7 @@ declare(strict_types=1);
 <head>
     <meta charset="<?= SITE_CODIFICATION ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= (empty($pageTitle) ? '' : $pageTitle) . SITE_TITLE ?></title>
-
-    <!-- HOJA DE ESTILOS DE NORMALIZE -->
-    <link rel="stylesheet" href="<?= BASE_PATH ?>assets/vendor/normalize_v8.0.1/css/normalize.css">
+    <title><?= ($pageTitle ?? '') . SITE_TITLE ?></title>
 
     <!-- HOJA DE ESTILOS DE BOOTSTRAP -->
     <link rel="stylesheet" href="<?= BASE_PATH ?>assets/vendor/bootstrap_v6.0.0_alpha.1/css/bootstrap.min.css">

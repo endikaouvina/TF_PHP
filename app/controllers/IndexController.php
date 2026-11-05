@@ -9,7 +9,9 @@ class IndexController {
     // Se define el método 'showIndex()', que mostrará la página de inicio
     public function showIndex(): void {
 
-        // Se carga la vista de inicio
+        // Se entregan los datos a la vista
+        $indexActive = 'active';
+
         require dirname(__DIR__) . '/views/index_view.php';
     }
 
