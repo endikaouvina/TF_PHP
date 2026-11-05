@@ -45,7 +45,7 @@ class NewsDAO {
                         ON news.id_user = user.id_user'
                 );
             } catch (PDOException $e) {
-                Logger::logRegister('Error en la sentencia $this->pdo->query() en app/models/NewsDAO.php->list(). No ha sido posible obtener el listado de noticias.' . PHP_EOL . $e, 'news');
+                Logger::registerLog('Error en la sentencia $this->pdo->query() en app/models/NewsDAO.php->list(). No ha sido posible obtener el listado de noticias.' . PHP_EOL . $e, 'news');
             }
 
             // Si la consulta es correcta, se devuelve un array con las noticias
@@ -63,7 +63,7 @@ class NewsDAO {
         }
 
         // Si la conexión PDO es incorrecta o falla la consulta a la BBDD, se devuelve null
-        Logger::logRegister('No está disponible la conexión PDO en app/models/NewsDAO.php->list(). No ha sido posible obtener el listado de noticias.', 'news');
+        Logger::registerLog('No está disponible la conexión PDO en app/models/NewsDAO.php->list(). No ha sido posible obtener el listado de noticias.', 'news');
 
         return null;
 

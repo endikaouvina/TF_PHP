@@ -51,7 +51,7 @@ class UserDAO {
                     WHERE loginUser.usuario = :userName'
                 );
             } catch (PDOException $e) {
-                Logger::logRegister('Error en la sentencia $this->pdo->prepare() en app/models/UserDAO.php->searchByUserName(). No ha sido posible obtener el listado de usuarios.' . PHP_EOL . $e, 'user');
+                Logger::registerLog('Error en la sentencia $this->pdo->prepare() en app/models/UserDAO.php->searchByUserName(). No ha sido posible obtener el listado de usuarios.' . PHP_EOL . $e, 'user');
             }
 
             if ($sentence) {
@@ -69,7 +69,7 @@ class UserDAO {
         }
 
         // Si la conexión PDO es incorrecta o falla la consulta a la BBDD, se devuelve null
-        Logger::logRegister('No está disponible la conexión PDO en app/models/UserDAO.php->searchByUserName(). No ha sido posible obtener el usuario.', 'user');
+        Logger::registerLog('No está disponible la conexión PDO en app/models/UserDAO.php->searchByUserName(). No ha sido posible obtener el usuario.', 'user');
 
         return null;
 

@@ -32,7 +32,7 @@ class Database {
             try {
                 self::$connection = new PDO($dsn, DB_USER, DB_PASS, $options);
             } catch (PDOException $e) {
-                Logger::logRegister('Ha fallado la conexión PDO a la base de datos desde ' . $path . '.', 'database');
+                Logger::registerLog('Ha fallado la conexión PDO a la base de datos desde ' . $path . '.', 'database');
                 return null;
             }
 

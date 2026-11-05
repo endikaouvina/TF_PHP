@@ -50,14 +50,14 @@ class AuthController {
                     header('Location: ' . BASE_PATH);
                     exit();
                 } else {
-                    Logger::logRegister('No se ha validado la contraseña en app/controllers/AuthController->tryLogin().', 'form_validator');
+                    Logger::registerLog('No se ha validado la contraseña en app/controllers/AuthController->tryLogin().', 'form_validator');
                 }
             } else {
-                Logger::logRegister('No se ha encontrado un usuario con el nombre de usuario introducido en app/controllers/AuthController->tryLogin().', 'form_validator');
+                Logger::registerLog('No se ha encontrado un usuario con el nombre de usuario introducido en app/controllers/AuthController->tryLogin().', 'form_validator');
             }
 
         } else {
-            Logger::logRegister('No se ha validado el nombre de usuario en app/controllers/AuthController->tryLogin().', 'form_validator');
+            Logger::registerLog('No se ha validado el nombre de usuario en app/controllers/AuthController->tryLogin().', 'form_validator');
         }
 
         // Si las credenciales son incorrectas, se guarda un mensaje de error en la sesión y se redirige de nuevo al login
