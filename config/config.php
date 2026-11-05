@@ -6,6 +6,9 @@ declare(strict_types=1);
 // Se incorporan las credenciales de la base de datos y el entorno
 require_once __DIR__ . '/.env.php';
 
+// Se incorpora la clase que gestionará los permisos de acceso
+require_once dirname(__DIR__) . '/app/core/Auth.php';
+
 // Se definen las constantes globales del sitio
 define('SITE_TITLE', 'AL DÍA CON LAS NOTICIAS');
 define('SITE_LANGUAGE', 'es');
@@ -25,3 +28,25 @@ require_once dirname(__DIR__) . '/app/core/Logger.php';
 // Se definen los ajustes del entorno
 date_default_timezone_set('Europe/Madrid');
 mb_internal_encoding(SITE_CODIFICATION);
+
+// Se definen las constantes de formularios
+define('FORM_USERNAME_MIN_RANGE', 3);
+define('FORM_USERNAME_MAX_RANGE', 50);
+define('FORM_USERNAME_REGEXP', '/^\w{' . FORM_USERNAME_MIN_RANGE . ',' . FORM_USERNAME_MAX_RANGE . '}$/');
+define('FORM_PASSWORD_MIN_RANGE', 4);
+define('FORM_PASSWORD_MAX_RANGE', 50);
+
+// Se protege la cookie de sesión
+ini_set('session.use_strict_mode', '1');
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => PROJECT_ENVIRONMENT === 'development' ? false : true,
+    'httponly' => true,
+    'samesite' => 'Strict'
+]);
+
+// Se inicia la sesión, si no existe ninguna ya creada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}

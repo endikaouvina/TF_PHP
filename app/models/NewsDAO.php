@@ -1,5 +1,8 @@
 <?php
 
+// Se desactiva la conversión automática de tipos de variables
+declare(strict_types=1);
+
 // Se incorporan las clases necesarias
 require_once dirname(__DIR__) . '/core/Database.php';
 require_once __DIR__ . '/News.php';
@@ -29,19 +32,21 @@ class NewsDAO {
     // Se define el método 'list()'
     public function list(): ?array {
 
-        $message = 'No está disponible la conexión PDO en app/models/NewsDAO.php->list(). No ha sido posible obtener el listado de noticias.';
-
         // Si la conexión PDO es correcta, se realiza la consulta
         if ($this->pdo) {
 
             $result = null;
 
-            $result = $this->pdo->query(
-                'SELECT news.titulo, news.imagen, news.texto, news.fecha, user.nombre AS usuario
-                FROM noticias news
-                INNER JOIN users_data user
-                    ON news.id_user = user.id_user'
-            );
+            try {
+                $result = $this->pdo->query(
+                    'SELECT news.titulo, news.imagen, news.texto, news.fecha, user.nombre AS usuario
+                    FROM noticias news
+                    INNER JOIN users_data user
+                        ON news.id_user = user.id_user'
+                );
+            } catch (PDOException $e) {
+                Logger::logRegister('Error en la sentencia $this->pdo->query() en app/models/NewsDAO.php->list(). No ha sido posible obtener el listado de noticias.' . PHP_EOL . $e, 'news');
+            }
 
             // Si la consulta es correcta, se devuelve un array con las noticias
             if ($result) {
@@ -58,8 +63,7 @@ class NewsDAO {
         }
 
         // Si la conexión PDO es incorrecta o falla la consulta a la BBDD, se devuelve null
-        $logger = new Logger();
-        $logger->logRegister($message, 'noticias');
+        Logger::logRegister('No está disponible la conexión PDO en app/models/NewsDAO.php->list(). No ha sido posible obtener el listado de noticias.', 'news');
 
         return null;
 

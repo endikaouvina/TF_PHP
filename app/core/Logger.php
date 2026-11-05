@@ -7,7 +7,7 @@ declare(strict_types=1);
 class Logger {
 
     // Se define el método 'log_register()', que registrará los errores en archivos .log, categorizados por tipo de error y por fecha
-    public function logRegister(string $message, string $log = 'app'): void {
+    public static function logRegister(string $message, string $log = 'app'): void {
 
         $line = '[' . date('Y-m-d H:i:s') . '] ' . $message . PHP_EOL;
         $path = LOCAL_LOG_PATH . LOCAL_LOG_FILENAME . $log . '.log';

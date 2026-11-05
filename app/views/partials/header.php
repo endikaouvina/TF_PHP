@@ -15,6 +15,16 @@ declare(strict_types=1);
                 <a href="<?= BASE_PATH ?>noticias.php" class="text-decoration-none fg-white">
                     <i class="fa-solid fa-newspaper"></i> Noticias
                 </a>
+                <?php if (!Auth::isLogin()): ?>
+                    <a href="<?= BASE_PATH ?>login.php" class="text-decoration-none fg-white">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                    </a>
+                <?php endif; ?>
+                <?php if (Auth::isLogin()): ?>
+                    <a href="<?= BASE_PATH ?>logout.php" class="text-decoration-none fg-white">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión
+                    </a>
+                <?php endif; ?>
             </nav>
         </div>
     </header>

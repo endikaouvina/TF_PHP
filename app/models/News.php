@@ -1,5 +1,8 @@
 <?php
 
+// Se desactiva la conversión automática de tipos de variables
+declare(strict_types=1);
+
 // Se define la entidad 'News'
 class News {
 

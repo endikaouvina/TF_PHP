@@ -5,7 +5,7 @@
 // Se desactiva la conversión automática de tipos de variables
 declare(strict_types=1);
 
-// Credenciales de acceso a la base de datos
+// Se definen las credenciales de acceso a la base de datos
 define('DB_HOST', 'tu_host');
 define('DB_NAME', 'tu_BBDD');
 define('DB_USER', 'tu_usuario');
