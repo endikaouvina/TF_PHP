@@ -9,6 +9,10 @@ class IndexController {
     // Se define el método 'showIndex()', que mostrará la página de inicio
     public function showIndex(): void {
 
+        // Se recuperan los posibles mensajes guardados en la sesión y se eliminan de la misma
+        $registerFeedback = $_SESSION['success'] ?? null;
+        unset($_SESSION['success']);
+
         // Se entregan los datos a la vista
         $indexActive = 'active';
 

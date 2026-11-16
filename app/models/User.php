@@ -7,7 +7,7 @@ declare(strict_types=1);
 class User {
 
     // Se definen las propiedades que describirán un usuario
-    private int $id;
+    private ?int $id;
     private string $name;
     private string $surname;
     private string $email;
@@ -21,7 +21,7 @@ class User {
 
     // Se define el método constructor
     public function __construct(
-        int $id,
+        ?int $id,
         string $name,
         string $surname,
         string $email,
@@ -31,7 +31,7 @@ class User {
         string $sex,
         string $userName,
         string $passwordHash,
-        string $rol
+        string $rol = 'user'
     ) {
         $this->id = $id;
         $this->name = $name;
@@ -47,7 +47,7 @@ class User {
     }
 
     // GETTERS: Métodos para consultar el valor las propiedades
-    public function getId(): int {
+    public function getId(): ?int {
         return $this->id;
     }
 

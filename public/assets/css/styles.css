@@ -7,6 +7,10 @@
 .nav .nav-link.fg-white:hover {
     color: var(--bs-theme-fg, var(--bs-nav-link-active-color));
 }
+.valid-feedback,
+.invalid-feedback {
+    display: block;
+}
 
 @media (width >= 1024px) {
     .alert {

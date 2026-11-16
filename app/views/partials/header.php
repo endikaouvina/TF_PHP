@@ -16,6 +16,9 @@ declare(strict_types=1);
                     <i class="fa-solid fa-newspaper"></i> Noticias
                 </a>
                 <?php if (!Auth::isLogin()): ?>
+                    <a href="<?= BASE_PATH ?>registro.php" class="nav-link <?= $registerActive ?? 'fg-white' ?>">
+                        <i class="fa-solid fa-newspaper"></i> Registro
+                    </a>
                     <a href="<?= BASE_PATH ?>login.php" class="nav-link <?= $loginActive ?? 'fg-white' ?>">
                         <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
                     </a>
