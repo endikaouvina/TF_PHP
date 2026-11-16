@@ -16,8 +16,5 @@ if (PROJECT_ENVIRONMENT === 'development') {
     ini_set('display_startup_errors', '0');
 }
 
-// En cualquier entorno, se guardan los errores en 'logs/', un archivo por día
+// En cualquier entorno, se guardan los errores en la directiva 'log_errors' de PHP
 ini_set('log_errors', '1');
-if (is_dir(LOCAL_LOG_PATH) && is_writable(LOCAL_LOG_PATH)) {
-    ini_set('error_log', LOCAL_LOG_PATH . LOCAL_LOG_FILENAME . 'php.log');
-}
