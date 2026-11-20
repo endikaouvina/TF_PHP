@@ -30,16 +30,18 @@ class AuthController {
     public function login(): void {
 
         // Se recogen los datos del formulario
-        $userName = $_POST['userName'];
+        $userName = $_POST['userName'] ?? '';
         $pass = $_POST['pass'] ?? '';
 
-        // Se valida cada dato del formulario
-        $userNameValidated = FormValidator::validateValue('userName', $userName, FORM_USERNAME_MIN_RANGE, FORM_USERNAME_MAX_RANGE, FORM_USERNAME_REGEXP, '');
+        // Se valida el formulario y se guarda el feedback en la variable '$loginFeedback'
+        $loginFeedback = FormValidator::validateForm('login', $userName, $pass);
 
-        $passValidated = FormValidator::validateValue('pass1', $pass, FORM_PASS_MIN_RANGE, FORM_PASS_MAX_RANGE, FORM_PASS_REGEXP, '');
+        /*echo '<pre>';
+        var_dump($loginFeedback);
+        echo '</pre>';*/
 
-        // Se todos los campos tienen un formato correcto, se continúa con el proceso de validación
-        if ($userNameValidated['validated'] && $passValidated['validated']) {
+        // Si los datos recibidos se validan correctamente, se continúa con el proceso de login
+        if ($loginFeedback['userName']['validated'] && $loginFeedback['pass1']['validated']) {
 
             // Se obtiene el usuario a partir de su nombre de usuario
             $userDao = new UserDAO();
@@ -48,8 +50,8 @@ class AuthController {
             // Se comprueba si el usuario existe y si la contraseña es correcta
             if ($user) {
 
-                // Si las credenciales son correctas, se regenera el id de sesión, se guarda su identidad y un mensaje de confirmación en la sesión y se redirige a la página de inicio
-                if (password_verify($pass, $user->getPasswordHash())) {
+                // Si las credenciales son correctas, se regenera el id de sesión, se guarda su identidad y un mensaje de confirmación en la variable de sesión y se redirige a la página de inicio
+                if (password_verify($pass, $user->getPassHash())) {
                     session_regenerate_id(true);
 
                     $_SESSION['user_id'] = $user->getId();
@@ -64,7 +66,7 @@ class AuthController {
 
         }
 
-        // Si algún dato tiene un formato incorrecto o las credenciales son incorrectas, se guarda un mensaje de error en la sesión y se redirige de nuevo al login
+        // Si algún dato tiene un formato incorrecto o las credenciales son incorrectas, se guarda un mensaje de error en la variable de sesión y se redirige de nuevo al login
         $_SESSION['error'] = 'El nombre de usuario y/o la contraseña son incorrectos.';
 
         header('Location: ' . BASE_PATH . 'login.php');

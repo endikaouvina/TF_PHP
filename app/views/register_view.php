@@ -67,7 +67,11 @@ require __DIR__ . '/partials/header.php';
             <div class="md:col">
                 <div class="form-floating mt-5">
                     <label for="birth">Fecha de nacimiento *</label>
-                    <input type="text" name="birth" id="birth" class="form-control <?= $registerFeedback['birth']['inputClass'] ?? '' ?>" data-bs-toggle="datepicker" data-bs-date-max="<?= date('Y-m-d') ?>" autocomplete="off" value="<?= isset($registerFeedback['birth']['inputValue']) ? htmlspecialchars($registerFeedback['birth']['inputValue']) : '' ?>" placeholder="">
+                    <input type="text" name="birth" id="birth" class="form-control <?= $registerFeedback['birth']['inputClass'] ?? '' ?>" data-bs-toggle="datepicker" data-bs-date-min="1900-01-01" data-bs-date-max="<?= date('Y-m-d') ?>" data-bs-locale="es-ES"
+                    <?php if (isset($registerFeedback['birth']['validated']) && isset($registerFeedback['birth']['inputValue']) && $registerFeedback['birth']['validated']): ?>
+                        data-bs-selected-dates="<?= htmlspecialchars(json_encode([$registerFeedback['birth']['inputValue']]), ENT_QUOTES, SITE_CODIFICATION) ?>"
+                    <?php endif; ?>
+                    autocomplete="off" placeholder="">
                 </div>
                 <?php if (isset($registerFeedback['birth']['feedbackClass']) && isset($registerFeedback['birth']['feedbackMessage'])): ?>
                     <div class="pt-1 ps-5 pe-5 <?= $registerFeedback['birth']['feedbackClass'] ?>"><?= $registerFeedback['birth']['feedbackMessage'] ?></div>
@@ -130,12 +134,6 @@ require __DIR__ . '/partials/header.php';
                 <?php endif; ?>
             </div>
         </div>
-        <?php if (isset($error)): ?>
-            <!-- MENSAJE DE ERROR TRAS UN INTENTO FALLIDO -->
-            <div class="alert theme-danger mb-5" role="alert">
-                <p><?= htmlspecialchars($error, ENT_QUOTES, SITE_CODIFICATION) ?></p>
-            </div>
-        <?php endif; ?>
         <p class="fg-secondary mt-5 mb-0">* Campo obligatorio</p>
         <button type="submit" class="btn-solid theme-secondary mt-5">Registrarse</button>
     </form>

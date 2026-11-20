@@ -134,7 +134,7 @@ class FormValidator {
     }
 
     // Se define el método 'validateForm()', que validará cualquier formulario del sitio web
-    public static function validateForm(mixed $name, mixed $surname, mixed $email, mixed $tel, mixed $birth, mixed $address, mixed $sex, mixed $userName, mixed $pass1, mixed $pass2, mixed $rol): array {
+    public static function validateForm(string $formType, mixed $userName, mixed $pass1, mixed $pass2 = '', mixed $name = '', mixed $surname = '', mixed $email = '', mixed $tel = '', mixed $birth = '', mixed $address = '', mixed $sex = '', mixed $rol = ''): array {
 
         // Se declara la variable '$feedback', que recogerá textos y clases que devolverá a la función principal
         $feedback = [];
@@ -162,8 +162,8 @@ class FormValidator {
 
         $feedback['rol'] = self::validateValue('rol', $rol, 0, 0, '', "El campo tiene un formato incorrecto. Se admiten los valores 'Admin' y 'User'.");
 
-        // Si se han pasado contraseñas, tienen un formato válido y no coinciden, se cambian las clases correspondientes y el texto que se muestra en pantalla
-        if ($feedback['pass1']['validated'] && $feedback['pass2']['validated'] && $pass1 !== $pass2) {
+        // Si no es el formulario de login y se han pasado contraseñas, tienen un formato válido y no coinciden, se cambian las clases correspondientes y el texto que se muestra en pantalla
+        if ($formType !== 'login' && $feedback['pass1']['validated'] && $feedback['pass2']['validated'] && $pass1 !== $pass2) {
             $feedback['pass1']['validated'] = false;
             $feedback['pass1']['inputClass'] = 'is-invalid';
             $feedback['pass1']['feedbackClass'] = 'invalid-feedback';
@@ -174,7 +174,7 @@ class FormValidator {
             $feedback['pass2']['feedbackMessage'] = 'El campo tiene un formato correcto, pero no coinciden las contraseñas.';
         }
 
-        // Se guarda en la variable $feedback si existe o no algún usuario con el email o el nombre de usuario introducidos
+        // Se guarda en la variable $feedback si existe o no algún usuario con el email o el nombre de usuario introducidos; éste último, si no es el formulario de login
         $userDao = new UserDAO();
 
         if ($userDao->searchByEmail($feedback['email']['inputValue'])) {
@@ -184,7 +184,7 @@ class FormValidator {
             $feedback['email']['feedbackMessage'] = 'El campo tiene un formato correcto, pero ya hay un usuario con el email introducido.';
         }
 
-        if ($userDao->searchByUserName($feedback['userName']['inputValue'])) {
+        if ($formType !== 'login' && $userDao->searchByUserName($feedback['userName']['inputValue'])) {
             $feedback['userName']['validated'] = false;
             $feedback['userName']['inputClass'] = 'is-invalid';
             $feedback['userName']['feedbackClass'] = 'invalid-feedback';

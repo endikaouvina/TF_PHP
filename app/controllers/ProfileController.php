@@ -45,7 +45,7 @@ class ProfileController {
         $pass2 = $_POST['pass2'] ?? '';
         $rol = $_POST['rol'] ?? '';
 
-        // Se valida el formulario y se guarda el feedback en la variable '$feedbackModify'
+        // Se valida el formulario y se guarda el feedback en la variable '$modifyFeedback'
         $modifyFeedback = FormValidator::validateForm($name, $surname, $email, $tel, $birth, $address, $sex, $userName, $pass1, $pass2, $rol);
 
         // Se obtienen los datos del usuario con la sesión iniciada
