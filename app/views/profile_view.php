@@ -25,7 +25,7 @@ require __DIR__ . '/partials/header.php';
             <p><strong>Fecha de nacimiento:</strong> <?= $user->getBirth() ?> · <a href="<?= BASE_PATH ?>perfil.php?modificarDato=fecha_de_nacimiento">Modificar</a></p>
             <p><strong>Dirección:</strong> <?= $user->getAddress() ?> · <a href="<?= BASE_PATH ?>perfil.php?modificarDato=direccion">Modificar</a></p>
             <p><strong>Sexo:</strong> <?= $user->getSex() ?> · <a href="<?= BASE_PATH ?>perfil.php?modificarDato=sexo">Modificar</a></p>
-            <p><strong>Nombre de usuario:</strong> <?= $user->getUserName() ?> · <a href="<?= BASE_PATH ?>perfil.php?modificarDato=nombre_de_usuario">Modificar</a></p>
+            <p><strong>Nombre de usuario:</strong> <?= $user->getUserName() ?></p>
             <p><strong>Contraseña:</strong> ************ · <a href="<?= BASE_PATH ?>perfil.php?modificarDato=contrasena">Modificar</a></p>
         </div>
         <div class="col-5">
@@ -78,11 +78,6 @@ require __DIR__ . '/partials/header.php';
                                 <option value="No indicado" <?= ($modifyFeedback['address']['inputValue'] ?? $user->getSex()) === 'No indicado' ? 'selected' : '' ?>>No indicado</option>
                             </select>
                         </div>
-                    <?php elseif ($_GET['modificarDato'] === 'nombre_de_usuario'): ?>
-                        <div class="form-floating mt-5">
-                            <label for="userName">Nombre de usuario *</label>
-                            <input type="text" name="userName" id="userName" class="form-control <?= $modifyFeedback['userName']['inputClass'] ?? '' ?>" maxlength="<?= FORM_USERNAME_MAX_RANGE ?>" value="<?= htmlspecialchars($modifyFeedback['userName']['inputValue'] ?? $user->getUserName(), ENT_QUOTES, SITE_CODIFICATION) ?>" placeholder="">
-                        </div>
                     <?php elseif ($_GET['modificarDato'] === 'contrasena'): ?>
                         <div class="form-floating mt-5">
                             <label for="pass1">Nueva contraseña *</label>
@@ -113,8 +108,6 @@ require __DIR__ . '/partials/header.php';
                                     echo htmlspecialchars($modifyFeedback['address']['feedbackMessage'], ENT_QUOTES, SITE_CODIFICATION);
                                 } elseif ($_GET['modificarDato'] === 'sexo') {
                                     echo htmlspecialchars($modifyFeedback['sex']['feedbackMessage'], ENT_QUOTES, SITE_CODIFICATION);
-                                } elseif ($_GET['modificarDato'] === 'nombre_de_usuario') {
-                                    echo htmlspecialchars($modifyFeedback['userName']['feedbackMessage'], ENT_QUOTES, SITE_CODIFICATION);
                                 } elseif ($_GET['modificarDato'] === 'contrasena') {
                                     echo htmlspecialchars($modifyFeedback['pass1']['feedbackMessage'], ENT_QUOTES, SITE_CODIFICATION);
                                 }

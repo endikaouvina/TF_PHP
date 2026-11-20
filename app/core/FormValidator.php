@@ -174,7 +174,7 @@ class FormValidator {
             $feedback['pass2']['feedbackMessage'] = 'El campo tiene un formato correcto, pero no coinciden las contraseñas.';
         }
 
-        // Se guarda en la variable $feedback si existe o no algún usuario con el email o el nombre de usuario introducidos; éste último, si no es el formulario de login
+        // Se guarda en la variable $feedback si existe o no algún usuario con el email o el nombre de usuario introducidos; éste último, solo si es el formulario de registro
         $userDao = new UserDAO();
 
         if ($userDao->searchByEmail($feedback['email']['inputValue'])) {
@@ -184,7 +184,7 @@ class FormValidator {
             $feedback['email']['feedbackMessage'] = 'El campo tiene un formato correcto, pero ya hay un usuario con el email introducido.';
         }
 
-        if ($formType !== 'login' && $userDao->searchByUserName($feedback['userName']['inputValue'])) {
+        if ($formType === 'register' && $userDao->searchByUserName($feedback['userName']['inputValue'])) {
             $feedback['userName']['validated'] = false;
             $feedback['userName']['inputClass'] = 'is-invalid';
             $feedback['userName']['feedbackClass'] = 'invalid-feedback';

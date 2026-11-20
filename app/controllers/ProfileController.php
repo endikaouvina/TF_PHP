@@ -40,13 +40,12 @@ class ProfileController {
         $birth = $_POST['birth'] ?? '';
         $address = $_POST['address'] ?? '';
         $sex = $_POST['sex'] ?? '';
-        $userName = $_POST['userName'] ?? '';
         $pass1 = $_POST['pass1'] ?? '';
         $pass2 = $_POST['pass2'] ?? '';
         $rol = $_POST['rol'] ?? '';
 
         // Se valida el formulario y se guarda el feedback en la variable '$modifyFeedback'
-        $modifyFeedback = FormValidator::validateForm($name, $surname, $email, $tel, $birth, $address, $sex, $userName, $pass1, $pass2, $rol);
+        $modifyFeedback = FormValidator::validateForm('profile', '', $pass1, $pass2, $name, $surname, $email, $tel, $birth, $address, $sex, $rol);
 
         // Se obtienen los datos del usuario con la sesión iniciada
         $userDAO = new UserDAO();
@@ -75,9 +74,6 @@ class ProfileController {
             $formValidated = true;
         } elseif ($modifyFeedback['sex']['validated']) {
             $user->setSex($modifyFeedback['sex']['inputValue']);
-            $formValidated = true;
-        } elseif ($modifyFeedback['userName']['validated']) {
-            $user->setSurname($modifyFeedback['userName']['inputValue']);
             $formValidated = true;
         } elseif ($modifyFeedback['pass1']['validated']) {
             $user->setPassHash(password_hash($modifyFeedback['pass1']['inputValue'], PASSWORD_DEFAULT));
