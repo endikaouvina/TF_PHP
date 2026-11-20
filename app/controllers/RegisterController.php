@@ -45,7 +45,7 @@ class RegisterController {
         $pass2 = $_POST['pass2'] ?? '';
 
         // Se valida el formulario y se guarda el feedback en la variable '$registerFeedback'
-        $registerFeedback = FormValidator::validateForm($name, $surname, $email, $tel, $birth, $address, $sex, $userName, $pass1, $pass2);
+        $registerFeedback = FormValidator::validateForm('register', $userName, $pass1, $pass2, $name, $surname, $email, $tel, $birth, $address, $sex);
 
         // Si los datos recibidos se validan correctamente, se continúa el proceso de registro
         if ($registerFeedback['name']['validated'] && $registerFeedback['surname']['validated'] && $registerFeedback['email']['validated'] && $registerFeedback['tel']['validated'] && $registerFeedback['birth']['validated'] && ($registerFeedback['address'] === null || $registerFeedback['address']['validated']) && $registerFeedback['sex']['validated'] && $registerFeedback['userName']['validated'] && $registerFeedback['pass1']['validated'] && $registerFeedback['pass2']['validated']) {
