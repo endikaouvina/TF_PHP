@@ -24,6 +24,9 @@ declare(strict_types=1);
                     </a>
                 <?php endif; ?>
                 <?php if (Auth::isLogin()): ?>
+                    <a href="<?= BASE_PATH ?>perfil.php" class="nav-link <?= $profileActive ?? 'fg-white' ?>">
+                        <i class="fa-solid fa-user"></i> Perfil
+                    </a>
                     <a href="<?= BASE_PATH ?>logout.php" class="nav-link <?= $logoutActive ?? 'fg-white' ?>">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión
                     </a>

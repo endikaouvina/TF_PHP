@@ -16,7 +16,7 @@ class User {
     private ?string $address;
     private string $sex;
     private string $userName;
-    private string $passwordHash;
+    private string $passHash;
     private string $rol;
 
     // Se define el método constructor
@@ -30,7 +30,7 @@ class User {
         ?string $address,
         string $sex,
         string $userName,
-        string $passwordHash,
+        string $passHash,
         string $rol = 'user'
     ) {
         $this->id = $id;
@@ -42,11 +42,11 @@ class User {
         $this->address = $address;
         $this->sex = $sex;
         $this->userName = $userName;
-        $this->passwordHash = $passwordHash;
+        $this->passHash = $passHash;
         $this->rol = $rol;
     }
 
-    // GETTERS: Métodos para consultar el valor las propiedades
+    // GETTERS: Métodos para consultar el valor de las propiedades
     public function getId(): ?int {
         return $this->id;
     }
@@ -83,12 +83,53 @@ class User {
         return $this->userName;
     }
 
-    public function getPasswordHash(): string {
-        return $this->passwordHash;
+    public function getPassHash(): string {
+        return $this->passHash;
     }
 
     public function getRol(): string {
         return $this->rol;
+    }
+
+    // SETTERS: Métodos para modificar el valor de las propiedades
+    public function setName(string $name): void {
+        $this->name = $name;
+    }
+
+    public function setSurname(string $surname): void {
+        $this->surname = $surname;
+    }
+
+    public function setEmail(string $email): void {
+        $this->email = $email;
+    }
+
+    public function setTel(string $tel): void {
+        $this->tel = $tel;
+    }
+
+    public function setBirth(string $birth): void {
+        $this->birth = $birth;
+    }
+
+    public function setAddress(string $address): void {
+        $this->address = $address;
+    }
+
+    public function setSex(string $sex): void {
+        $this->sex = $sex;
+    }
+
+    public function setUserName(string $userName): void {
+        $this->userName = $userName;
+    }
+
+    public function setPassHash(string $passHash): void {
+        $this->passHash = $passHash;
+    }
+
+    public function setRol(string $rol): void {
+        $this->rol = $rol;
     }
 
 }
