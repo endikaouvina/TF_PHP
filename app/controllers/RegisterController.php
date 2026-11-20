@@ -29,7 +29,7 @@ class RegisterController {
     // Se define el método 'register()', que comprobará los datos del formulario de registro, y si tienen el formato correcto, se registrará al usuario
     public function register(): void {
 
-        // Se declara la variable '$registerFeedback', que se recogerá textos y clases para enviar a la vista a través de la variable de sesión
+        // Se declara la variable '$registerFeedback', que recogerá textos y clases para enviar a la vista a través de la variable de sesión
         $registerFeedback = [];
 
         // Se recogen los datos del formulario

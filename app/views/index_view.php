@@ -12,5 +12,3 @@ require __DIR__ . '/partials/header.php';
 
 // Se añade el footer
 require __DIR__ . '/partials/footer.php';
-
-?>

@@ -12,7 +12,7 @@ require __DIR__ . '/partials/header.php';
 
 ?>
 
-<!-- FORMULARIO DE LOGIN -->
+<!-- FORMULARIO DE REGISTRO -->
 <div class="container">
     <h2 class="text-center">Registrarse</h2>
     <?php if (isset($registerFeedback['userRegistered'])): ?>
@@ -148,5 +148,3 @@ require __DIR__ . '/partials/header.php';
 
 // Se añade el footer
 require __DIR__ . '/partials/footer.php';
-
-?>
